@@ -68,10 +68,12 @@ int main()
             outputGoaback();
             break;
         case 'h':
-            altaTrabajo(listaTrabajos,TAM_TRABAJOS,&nextIdTrabajo,listaServicios,TAM_SERVICIOS,listaBicicletas,TAM_BICICLETAS,listaTipos,TAM_TIPOS,listaColores,TAM_COLORES,primerBicicleta);
+            // falta terminar....
+//            altaTrabajo(listaTrabajos,TAM_TRABAJOS,&nextIdTrabajo,listaServicios,TAM_SERVICIOS,listaBicicletas,TAM_BICICLETAS,listaTipos,TAM_TIPOS,listaColores,TAM_COLORES,primerBicicleta);
             break;
         case 'i':
-            mostrarTrabajos(listaTrabajos,TAM_TRABAJOS,listaServicios,TAM_SERVICIOS,listaBicicletas,TAM_BICICLETAS);
+                        // falta terminar....
+//            mostrarTrabajos(listaTrabajos,TAM_TRABAJOS,listaServicios,TAM_SERVICIOS,listaBicicletas,TAM_BICICLETAS);
             outputGoaback();
             break;
         case 'j':
