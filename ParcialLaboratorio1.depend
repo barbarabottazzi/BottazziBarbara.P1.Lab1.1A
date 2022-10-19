@@ -1,0 +1,130 @@
+# depslib dependency file v1.0
+1665968270 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\fecha.c
+
+1666184761 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\inputs.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1666192264 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"inputs.h"
+	"validaciones.h"
+	"outputs.h"
+	<ctype.h>
+	"menu.h"
+
+1666068454 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\inputs.h
+
+1666042866 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\validaciones.h
+
+1666020416 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\outputs.h
+
+1666187544 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\menu.h
+
+1665877535 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\outputs.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1666189167 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\servicios.c
+	"servicios.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1666187794 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\servicios.h
+
+1666066773 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\validaciones.c
+	"inputs.h"
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+
+1666186281 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\color.c
+	"tipo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"color.h"
+
+1666187982 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\tipo.h
+
+1666188041 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\color.h
+
+1666186292 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\tipo.c
+	"tipo.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1666192030 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"servicios.h"
+	"tipo.h"
+	"color.h"
+	"mockUp.h"
+	"menu.h"
+	"validaciones.h"
+	"outputs.h"
+	"bicicleta.h"
+	"trabajo.h"
+
+1666187583 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\mockup.h
+	"tipo.h"
+	"color.h"
+	"servicios.h"
+
+1666192100 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\bicicleta.h
+	"tipo.h"
+	"color.h"
+
+1666191981 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\trabajo.h
+	"servicios.h"
+	"tipo.h"
+	"color.h"
+	"bicicleta.h"
+	"fecha.h"
+
+1665888082 c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\fecha.h
+
+1666192117 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\bicicleta.c
+	"bicicleta.h"
+	"tipo.h"
+	"color.h"
+	<stdlib.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"validaciones.h"
+	<ctype.h>
+	"inputs.h"
+	"menu.h"
+	"outputs.h"
+	"bicicleta.h"
+	"color.h"
+	"tipo.h"
+
+1666192224 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\trabajo.c
+	"trabajo.h"
+	"servicios.h"
+	"bicicleta.h"
+	<time.h>
+	<stdio.h>
+	<stdlib.h>
+	"inputs.h"
+	"outputs.h"
+
+1666185318 source:c:\users\emanuel baquero\onedrive\escritorio\bottazzibarbara.p1.lab1.1a\parciallaboratorio1\mockup.c
+	"servicios.h"
+	<stdlib.h>
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"tipo.h"
+	"color.h"
+
