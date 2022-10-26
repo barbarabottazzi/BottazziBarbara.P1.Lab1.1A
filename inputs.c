@@ -78,8 +78,8 @@ int getFecha(int *pMes,int *pAnio,int *pDia,char mensaje[],char mesajeError[])
     if(pMes != NULL && pAnio != NULL && pDia != NULL)
     {
 
-        printf("Ingrese fecha en formato dd/mm/aaaa");
-        scanf("%d,%d,%d",pDia,pAnio,pMes);
+        printf(mensaje);
+        scanf("%d/%d/%d",pDia,pMes,pAnio);
 
         validado=1;
 

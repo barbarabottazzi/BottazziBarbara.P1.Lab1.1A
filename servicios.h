@@ -9,6 +9,8 @@ float precio;
 }eServicios;
 
 #endif // SERVICIOS_H_INCLUDED
+
+
 /** \brief muestra un servicio del array servicios
  *
  * \param servicio eServicios el array de sercvicios en un indice especifico
@@ -16,6 +18,9 @@ float precio;
  *
  */
 void mostrarServicio(eServicios servicio);
+
+
+
 /** \brief muestra todos los servicios
  *
  * \param listaServicios[] eServicios array servicios
@@ -24,6 +29,9 @@ void mostrarServicio(eServicios servicio);
  *
  */
 int mostrarServicios(eServicios listaServicios[], int tam);
+
+
+
 /** \brief muestra la descripcion del servicio a traves de su id
  *
  * \param listaServicios[] eServicios array servicios
@@ -34,6 +42,8 @@ int mostrarServicios(eServicios listaServicios[], int tam);
  *
  */
 int cargarDescripcionServicios(eServicios listaServicios[],int tamServicios, int idServicio,char servicioAMostrar[]);
+
+
 /** \brief busca si existe o no un servicio a traves de su id
  *
  * \param listaServicios[] eServicios array servicios

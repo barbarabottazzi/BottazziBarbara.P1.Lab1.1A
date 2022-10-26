@@ -13,6 +13,7 @@
 #include "bicicleta.h"
 #include "color.h"
 #include "tipo.h"
+#include "cliente.h"
 
 //Inicializa todos los autos en lugares vacios
 int inicializarBicicletas(eBicicleta listaBicicletas[],int tam)
@@ -62,7 +63,7 @@ int buscarIndiceBicicletaId(eBicicleta listaBicicletas[],int tam,int id)
 }
 int existeBicicleta(eBicicleta listaBicicletas[], int tam,int idBicicleta)
 {
-   int existe=0;
+    int existe=0;
     if(listaBicicletas!= NULL && tam>0)
     {
         for(int i=0; i<tam; i++)
@@ -93,7 +94,7 @@ int buscarIndiceAutoId(eBicicleta listaBicicletas[],int tam, int id)
 
 
 
-int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIdBicicleta,eColor listaColores[],int tamColores,eTipo listaTipos[], int tamTipos,int *pPrimerBicicleta )
+int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIdBicicleta,eColor listaColores[],int tamColores,eTipo listaTipos[], int tamTipos,int *pPrimerBicicleta,eCliente listaClientes[],int tamClientes)
 {
     int todoOk=0;
     int indice;
@@ -110,7 +111,9 @@ int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIdBicicleta,eC
         else
         {
             printf("---------------------------------ALTA DE BICICLETA---------------------------------\n");
-            getString("Ingrese marca","Error,nombre muy largo",auxBicicleta.marca,20);
+            mostrarClientes(listaClientes,tamClientes);
+            getInt(&auxBicicleta.idCliente,"Ingrese id de bicicleta","Error ingrese un numero valido");
+            getString("Ingrese marca\n","Error,nombre muy largo\n",auxBicicleta.marca,20);
             mostrarColores(listaColores,tamColores);
             getInt(&auxBicicleta.idColor,"Ingrese Color\n","Error ingrese id valido\n") ;
             while(!existeColor(listaColores,tamColores,auxBicicleta.idColor))
@@ -126,7 +129,7 @@ int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIdBicicleta,eC
                 getInt(&auxBicicleta.idTipo,"Ingrese id de tipo valido\n", "Error, ingrese numero valido");
 
             }
-            validaciones_ingresoChar(&auxBicicleta.material,"Ingrese un material\n","Ingrese 'c' para carbono, 'a' para aluminio",'c','a');
+            validaciones_ingresoChar(&auxBicicleta.material,"Ingrese un material\n","Ingrese 'c' para carbono, 'a' para aluminio\n",'c','a');
             auxBicicleta.isEmpty=0;
 
 
@@ -142,7 +145,7 @@ int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIdBicicleta,eC
     return todoOk;
 };
 
-int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos)
+int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos ,eCliente listaClientes[],int tamClientes)
 {
 
 
@@ -157,7 +160,7 @@ int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], in
         {
             system("cls");
             printf("BAJA BICICLETA\n");
-            mostrarBiciletas(listaBicicletas,tam,listaColores,tamColores,listaTipos,tamTipos);
+            mostrarBiciletas(listaBicicletas,tam,listaColores,tamColores,listaTipos,tamTipos,listaClientes,tamClientes);
             fflush(stdin);
             getInt(&id,"Ingrese el id de la bicilets a dar baja : \n","Error,ingrese un numero valido\n");
             indice=buscarIndiceBicicletaId(listaBicicletas,tam,id);
@@ -170,7 +173,7 @@ int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], in
             if(indice != -1)
             {
                 printf("\n");
-                mostrarBicileta(listaBicicletas[indice],listaColores,tamColores,listaTipos,tamTipos);
+                mostrarBicileta(listaBicicletas[indice],listaColores,tamColores,listaTipos,tamTipos,listaClientes,tamClientes);
                 validaciones_confirma(&confirma,"Confirma baja? escriba si para confirmar... \n",'s','n');
                 confirma=tolower(confirma);
                 if(confirma == 's')
@@ -193,7 +196,7 @@ int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], in
     return todoOk;
 };
 
-int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos)
+int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos ,eCliente listaClientes[],int tamClientes)
 {
 //material
 //tipo
@@ -210,7 +213,7 @@ int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[
         {
             system("cls");
             printf("Modificacion Bicileta\n");
-            mostrarBiciletas(listaBicicletas,tam,listaColores,tamColores,listaTipos,tamTipos);
+            mostrarBiciletas(listaBicicletas,tam,listaColores,tamColores,listaTipos,tamTipos,listaClientes,tamClientes);
             fflush(stdin);
             getInt(&id,"Ingrese el id de la pers a modificar : \n","Error, ingrese un id valido\n");
             indice=buscarIndiceBicicletaId(listaBicicletas,tam,id);
@@ -222,7 +225,7 @@ int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[
             else
             {
                 printf("\n");
-                mostrarBicileta(listaBicicletas[indice],listaColores,tamColores,listaTipos,tamTipos);
+                mostrarBicileta(listaBicicletas[indice],listaColores,tamColores,listaTipos,tamTipos,listaClientes,tamClientes);
                 validaciones_confirma(&confirma,"Si es correcta la persona a modificar escriba si para continuar... \n", 's','n');
                 while(confirma == 's')
                 {
@@ -264,21 +267,41 @@ int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[
 }
 
 
+int cargarMarcaBicicleta(eBicicleta listaBicicleta[],int tamBicicletas, int idBicicleta,char nombreAMostrar[])
+{
 
+    int todoOk=0;
+    if(listaBicicleta != NULL && tamBicicletas > 0 && nombreAMostrar != NULL )
+    {
+        for(int i=0; i<tamBicicletas; i++)
+        {
+            if(listaBicicleta[i].id == idBicicleta)
+            {
+                strcpy(nombreAMostrar,listaBicicleta[i].marca);
+                break;
+            }
+        }
+        todoOk=1;
+    }
+    return todoOk;
+}
 
 //---------------------------------------------------------------------------------------------------------------------------------
 
 
 
-void mostrarBicileta(eBicicleta autoInd,eColor listaColores[], int tamColores,eTipo listaTipos[],int tamTipos)
+void mostrarBicileta(eBicicleta biciInd,eColor listaColores[], int tamColores,eTipo listaTipos[],int tamTipos,eCliente listaClientes[],int tamClientes)
 {
     char colorAMostrar[20];
     char tipoAmostrar[20];
-    cargarDescripcionColores(listaColores,tamColores,autoInd.idColor,colorAMostrar);
-    cargarDescripcionTipos(listaTipos,tamTipos,autoInd.idTipo,tipoAmostrar);
-    printf("%-15d %-20s %-30s %-40s %-10c \n\n",autoInd.id,autoInd.marca,tipoAmostrar,colorAMostrar,toupper(autoInd.material));
+    char nombreAMostrar[30];
+    cargarDescripcionColores(listaColores,tamColores,biciInd.idColor,colorAMostrar);
+    cargarDescripcionTipos(listaTipos,tamTipos,biciInd.idTipo,tipoAmostrar);
+    cargarDescripcionClientes(listaClientes,tamClientes,biciInd.idCliente,nombreAMostrar);
+    printf("%-10d %-15s %-17s %-14s %-15c %s \n\n",biciInd.id,biciInd.marca,tipoAmostrar,colorAMostrar,toupper(biciInd.material),nombreAMostrar);
+
 }
-int mostrarBiciletas(eBicicleta listaBicicletas[], int tam,eColor listaColores[],int tamColores,eTipo listaTipos[],int tamTipos )
+int mostrarBiciletas(eBicicleta listaBicicletas[], int tam,eColor listaColores[],int tamColores,eTipo listaTipos[],int tamTipos,eCliente listaClientes[],int tamClientes )
 {
     int todoOk=0;
     int flagBicicleta=0;
@@ -287,14 +310,14 @@ int mostrarBiciletas(eBicicleta listaBicicletas[], int tam,eColor listaColores[]
     {
         system("cls");
         printf("          ***Listado de Bicicletas***                                    \n");
-        printf("-------------------------------------------------------------------------\n");
-        printf("Id:         Marca:         Tipo:              Color:        Material:     \n");
-        printf("-------------------------------------------------------------------------\n");
+        printf("----------------------------------------------------------------------------------------\n");
+        printf("Id:         Marca:         Tipo:              Color:        Material:       Cliente:    \n");
+        printf("----------------------------------------------------------------------------------------\n");
         for(int i=0; i<tam; i++)
         {
             if(listaBicicletas[i].isEmpty == 0)
             {
-                mostrarBicileta(listaBicicletas[i],listaColores,tamColores,listaTipos,tamTipos);
+                mostrarBicileta(listaBicicletas[i],listaColores,tamColores,listaTipos,tamTipos,listaClientes,tamClientes);
 
                 flagBicicleta=1;
             }

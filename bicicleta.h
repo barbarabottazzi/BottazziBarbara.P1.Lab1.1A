@@ -1,9 +1,10 @@
-#include "tipo.h"
-#include "color.h"
 
 
 #ifndef BICILETA_H_INCLUDED
 #define BICILETA_H_INCLUDED
+#include "tipo.h"
+#include "color.h"
+#include "cliente.h"
 
 typedef struct
 {
@@ -12,6 +13,7 @@ typedef struct
     int idColor;
     int idTipo;
     char material;
+    int idCliente;
     int isEmpty;
 } eBicicleta;
 
@@ -31,7 +33,7 @@ typedef struct
 
 
 
-int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIDAuto,eColor listaColores[],int tamColores,eTipo listaTipos[], int tamTipos , int *pPrimerBicicleta);
+int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIDAuto,eColor listaColores[],int tamColores,eTipo listaTipos[], int tamTipos , int *pPrimerBicicletaeCliente ,eCliente listaClientes[],int tamClientes);
 /** \brief realiza la baja de una bicicleta
  *
  * \param listaBicicletas[] eBicicleta array donde se guardan las bicis
@@ -43,7 +45,7 @@ int altaBicicleta(eBicicleta listaBicicletas[],int tam, int *pNextIDAuto,eColor 
  * \return int 0 si no se pudo realizar 1 si salio todo bien
  *
  */
-int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos);
+int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos,eCliente listaClientes[],int tamClientes);
 
 
 
@@ -58,7 +60,7 @@ int bajaBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], in
  * \return int 0 si no se pudo realizar 1 si salio todo bien
  *
  */
-int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos);
+int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[], int tamColores, eTipo listaTipos[], int tamTipos,eCliente listaClientes[],int tamClientes);
 
 
 /** \brief muestra los datos de una bicicleta
@@ -71,7 +73,7 @@ int modificarBicicleta(eBicicleta listaBicicletas[],int tam,eColor listaColores[
  * \return void
  *
  */
-void mostrarBicileta(eBicicleta autoInd,eColor listaColores[], int tamColores,eTipo listaTipos[],int tamTipos);
+void mostrarBicileta(eBicicleta autoInd,eColor listaColores[], int tamColores,eTipo listaTipos[],int tamTipos,eCliente listaClientes[],int tamClientes);
 
 
 /** \brief muestra los datos de las bicicletas que existen en el array bicicletas
@@ -85,7 +87,7 @@ void mostrarBicileta(eBicicleta autoInd,eColor listaColores[], int tamColores,eT
  * \return int 0 si no se pudo realizar la funcion , 1 si salio todo bien
  *
  */
-int mostrarBiciletas(eBicicleta listaBicicletas[], int tam,eColor listaColores[],int tamColores,eTipo listaTipos[],int tamTipos );
+int mostrarBiciletas(eBicicleta listaBicicletas[], int tam,eColor listaColores[],int tamColores,eTipo listaTipos[],int tamTipos ,eCliente listaClientes[],int tamClientes);
 
 
 
@@ -131,3 +133,15 @@ int buscarIndiceBicicletaId(eBicicleta listaBicicletas[],int tam,int id);
  *
  */
 int existeBicicleta(eBicicleta listaBicicletas[], int tam,int idBicicleta);
+
+
+/** \brief muestra la marca de una bicicleta filtrando a traves del id
+ *
+ * \param listaBicicleta[] eBicicleta array bicicletas
+ * \param tamBicicletas int tamanio bicicletas
+ * \param idBicicleta int id bicicleta a filtrar
+ * \param nombreAMostrar[] char direcion de memoria donde se guarda la marca de la bici
+ * \return int
+ *
+ */
+int cargarMarcaBicicleta(eBicicleta listaBicicleta[],int tamBicicletas, int idBicicleta,char nombreAMostrar[]);

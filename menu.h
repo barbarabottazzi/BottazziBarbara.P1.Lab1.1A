@@ -17,3 +17,9 @@ int menu();
  */
 int menuModificacion();
 
+/** \brief menu informes del programa
+ *
+ * \return int devuelve la opcion elegida por el usuarios
+ *
+ */
+int menuInformes();

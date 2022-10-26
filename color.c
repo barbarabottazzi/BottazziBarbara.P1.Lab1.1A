@@ -6,7 +6,7 @@
 void mostrarColor(eColor color)
 {
 
-    printf("%d      %-10s                 \n\n",color.id,color.nombreColor);
+    printf("%-7d      %-10s                 \n\n",color.id,color.nombreColor);
 }
 int mostrarColores(eColor listaColores[], int tam)
 {

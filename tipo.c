@@ -60,7 +60,6 @@ int existeTipo(eTipo listaTipos[],int tamTipos,int idTipo)
             {
                 existe=1;
                 break;
-                break;
             }
         }
     }

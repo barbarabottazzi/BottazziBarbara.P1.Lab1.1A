@@ -1,13 +1,11 @@
+#ifndef MOCKUP_H_INCLUDED
+#define MOCKUP_H_INCLUDED
 #include "tipo.h"
 #include "color.h"
 #include "servicios.h"
-
-
-
-#ifndef MOCKUP_H_INCLUDED
-#define MOCKUP_H_INCLUDED
-
-
+#include "bicicleta.h"
+#include "trabajo.h"
+#include "cliente.h"
 
 #endif // MOCKUP_H_INCLUDED
 
@@ -27,3 +25,18 @@
  *
  */
 int hardcodearDatos(eServicios listaServicios[],int tam,eTipo listaTipos[],int tamTipos,eColor listaColores[],int tamColores,int cantidadTipos,int cantidadColores,int cantidadServicios);
+/** \brief
+ *
+ * \param pNextIdBicicletas int* direccion de memoria de proximo id de bicicletas
+ * \param listadoBicicletas[] eBicicleta array de biciciletas existente
+ * \param pNextIdTrabajo int* direccion de memoria de proximo id trabajo
+ * \param listaTrabajos[] eTrabajo array de listados trabajos
+ * \return int
+ *
+ */
+int harcodearBicicletasyTrabajos(int *pNextIdBicicletas,eBicicleta listadoBicicletas[],int *pNextIdTrabajo,eTrabajo listaTrabajos[]);
+
+
+
+
+int harcodearClientes(eCliente listaClientes[],int tamClientes);

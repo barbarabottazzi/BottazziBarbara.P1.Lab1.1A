@@ -31,9 +31,59 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ParcialLaboratorio1.cbp" />
+		<Unit filename="ParcialLaboratorio1.layout" />
+		<Unit filename="bicicleta.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="bicicleta.h" />
+		<Unit filename="color.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="color.h" />
+		<Unit filename="fecha.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="fecha.h" />
+		<Unit filename="informes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="informes.h" />
+		<Unit filename="inputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="inputs.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="menu.h" />
+		<Unit filename="mockUp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="mockUp.h" />
+		<Unit filename="outputs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="outputs.h" />
+		<Unit filename="servicios.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="servicios.h" />
+		<Unit filename="tipo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="tipo.h" />
+		<Unit filename="trabajo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="trabajo.h" />
+		<Unit filename="validaciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="validaciones.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -40,7 +40,7 @@ int buscarLibreTrabajo(eTrabajo listaTrabajos[], int tam)
 }
 
 
-int altaTrabajo(eTrabajo listaTrabajos[],int tam, int *pNextIDTrabajo,eServicios listaServicios[],int tamServicios,eBicicleta listaBicicletas[],int tamBicicletas, eTipo listaTipos[],int tamTipos, eColor listaColores[],int tamColores,int primerBicicleta )
+int altaTrabajo(eTrabajo listaTrabajos[],int tam, int *pNextIDTrabajo,eServicios listaServicios[],int tamServicios,eBicicleta listaBicicletas[],int tamBicicletas, eTipo listaTipos[],int tamTipos, eColor listaColores[],int tamColores,int primerBicicleta, eCliente listaClientes[],int tamClientes )
 {
     int todoOk=0;
     int indice;
@@ -60,7 +60,7 @@ int altaTrabajo(eTrabajo listaTrabajos[],int tam, int *pNextIDTrabajo,eServicios
             if(primerBicicleta)
             {
                 printf("---------------------------------ALTA DE TRABAJO---------------------------------");
-                mostrarBiciletas(listaBicicletas,tam,listaColores,tamColores,listaTipos,tamTipos);
+                mostrarBiciletas(listaBicicletas,tam,listaColores,tamColores,listaTipos,tamTipos,listaClientes,tamClientes);
                 getInt(&auxTrabajo.idBicicleta,"Ingrese id de Bicicleta\n","Error ingrese id valido\n");
                 while((!existeBicicleta(listaBicicletas,tamBicicletas,auxTrabajo.idBicicleta)))
                 {
@@ -100,10 +100,11 @@ int altaTrabajo(eTrabajo listaTrabajos[],int tam, int *pNextIDTrabajo,eServicios
 void mostrarTrabajo(eTrabajo trabajo, eServicios listaServicios[],int tamServicios, eBicicleta listaBicicletas[],int tamBicicletas)
 {
     char servicioAMostrar[20];
+    char marcaBicicleta[20];
     cargarDescripcionServicios(listaServicios,tamServicios,trabajo.idServicio,servicioAMostrar);
+    cargarMarcaBicicleta(listaBicicletas,tamBicicletas,trabajo.idBicicleta,marcaBicicleta);
 
-
-    printf("%-10d  %-10s %02d/%02d/%d \n\n",trabajo.id, servicioAMostrar,trabajo.fecha.dia,trabajo.fecha.mes,trabajo.fecha.anio);
+    printf("%-15d %-25s  %-27s %02d/%02d/%d \n\n",trabajo.id,marcaBicicleta, servicioAMostrar,trabajo.fecha.dia,trabajo.fecha.mes,trabajo.fecha.anio);
 }
 int mostrarTrabajos(eTrabajo listaTrabajos[], int tam,eServicios listaServicios[],int tamServicios, eBicicleta listaBicicletas[],int tamBicicletas)
 {

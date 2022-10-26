@@ -13,6 +13,7 @@ int validaciones_confirma(char *pVariable,char *mensaje, char confirma,char noCo
         printf(mensaje);
         fflush(stdin);
         rta = getchar();
+        rta=tolower(rta);
         if (rta == 's' )
         {
             *pVariable = confirma;
@@ -80,27 +81,34 @@ int validaciones_ingresoRangoChar(char *pResultado, char *mensaje, char *mensaje
 {
 
     int validado = 0;
-    char aux;
-    int buffer;
+    char charIngrsado;
+
     if (pResultado != NULL && mensaje != NULL && mensajeError != NULL
             && minimo <= maximo)
     {
-        buffer=getChar(mensaje);
-        while (buffer == 0 || aux < minimo || aux > maximo)
+        fflush(stdin);
+        printf(mensaje);
+        scanf("%c",&charIngrsado);
+        charIngrsado= tolower(charIngrsado);
+        while (charIngrsado == 0 || charIngrsado < tolower(minimo) || charIngrsado > tolower(maximo))
         {
-            if (buffer == 0)
+            if (charIngrsado == 0)
             {
                 fflush(stdin);
-                buffer=getChar("Error, ingrese un caracter...");
+                printf("Error, ingrese un caracter");
+                scanf("%c",&charIngrsado);
+                charIngrsado= tolower(charIngrsado);
             }
             else
             {
                 printf(mensajeError);
-                buffer = scanf("%c", &aux);
+                fflush(stdin);
+                scanf("%c",&charIngrsado);
+                charIngrsado= tolower(charIngrsado);
             }
         }
         validado = 1;
-        *pResultado = aux;
+        *pResultado = charIngrsado;
 
     }
     return validado;
@@ -147,7 +155,7 @@ int validaciones_letras(char str[])
             validado= 0;
             break;
         }
-    i++;
+        i++;
     }
     return validado;
 
@@ -162,7 +170,7 @@ int validaciones_ingresoLetras(char pResultado[], char *mensaje, char *mensajeEr
         getString(mensaje,mensajeError,strIngresada,20);
         while(!validaciones_letras(strIngresada))
         {
-        getString(mensajeError,mensajeError,strIngresada,20);
+            getString(mensajeError,mensajeError,strIngresada,20);
         };
 
         validado = 1;
